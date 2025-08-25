@@ -1,0 +1,1 @@
+cl /c /I Vectors.h main.c Vectors.c
