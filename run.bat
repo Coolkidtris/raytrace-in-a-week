@@ -1,1 +1,3 @@
-cl /I Vectors.h  main.c Vectors.c  Colours.c
+cl /FoObj\ /I Header main.c Source\*c
+rem /FeExe\
+

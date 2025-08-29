@@ -1,21 +1,27 @@
-#include <stdio.h>
 #include <math.h>
 #include "Vectors.h"
 
+// Constructor
+Vec3 newV3(float x, float y, float z){
+    Vec3 newVec = {x, y, z};
+    return newVec;
+}
+
+// Math functions - Scalar
 Vec3 *neg(Vec3 *vectorToNegate){
     vectorToNegate->x = -vectorToNegate->x;
     vectorToNegate->y = -vectorToNegate->y;
     vectorToNegate->z = -vectorToNegate->z;
     return vectorToNegate;
-}             // Negates all members of a vector
+}               // Negates all members of a vector
 
 Vec3 *mul(Vec3 *vectorToMul, float amnt){
-    vectorToMul->x += amnt;
-    vectorToMul->y += amnt;
-    vectorToMul->z += amnt;
+    vectorToMul->x *= amnt;
+    vectorToMul->y *= amnt;
+    vectorToMul->z *= amnt;
 
     return vectorToMul;
-}    // Multiplies all members of a Vector by a certain number
+}               // Multiplies all members of a Vector by a certain number
 
 Vec3 *div(Vec3 *vectorToDiv, float amnt){
     vectorToDiv->x /= amnt;
@@ -31,7 +37,7 @@ Vec3 *add(Vec3 *vectorToAdd, float amnt){
     vectorToAdd->z += amnt;
 
     return vectorToAdd;
-}    // Adds a value to all members of a Vector
+}               // Adds a value to all members of a Vector
 
 /*
 Vec3 *shl(Vec3 *vectorToShift, int amnt){
@@ -52,7 +58,7 @@ Vec3 vadd(Vec3 v1, Vec3 v2){
     newVec.z = v1.z + v2.z;
 
     return newVec;
-}              // Adds 2 vectors together and returns a third
+}               // Adds 2 vectors together and returns a third
 
 Vec3 vsub(Vec3 v1, Vec3 v2){
     Vec3 newVec;
@@ -62,7 +68,7 @@ Vec3 vsub(Vec3 v1, Vec3 v2){
     newVec.z = v1.z - v2.z;
 
     return newVec;
-}              // Subtract 2 vectors from each other
+}               // Subtract 2 vectors from each other
 
 Vec3 vmul(Vec3 v1, Vec3 v2){
     Vec3 newVec;
@@ -72,7 +78,7 @@ Vec3 vmul(Vec3 v1, Vec3 v2){
     newVec.z = v1.z * v2.z;
 
     return newVec;
-}              // Multiply 2 vectors together
+}               // Multiply 2 vectors together
 
 Vec3 vdiv(Vec3 v1, Vec3 v2){
     Vec3 newVec;
@@ -82,7 +88,7 @@ Vec3 vdiv(Vec3 v1, Vec3 v2){
     newVec.z = v1.z / v2.z;
 
     return newVec;
-}              // Divide 2 vectors by each other
+}               // Divide 2 vectors by each other
 
 // Utility Functions
 void vout(Vec3 vector){
@@ -95,16 +101,16 @@ Vec3 *sqr(Vec3 *vectorToSqr){
     vectorToSqr->z *= vectorToSqr->z;
 
     return vectorToSqr;
-}                // Squares all members of a vector
+}               // Squares all members of a vector
 
 float vlen(Vec3 vector){
     float lengthSquared = vector.x*vector.x + vector.y*vector.y + vector.z*vector.z;
     return sqrtf(lengthSquared);
-}                    // Returns the length of a Vector
+}               // Returns the length of a Vector
 
 float dot(Vec3 v1, Vec3 v2){
     return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z; 
-}                     // Returns a Vector with its dot product
+}               // Returns a Vector with its dot product
 
 Vec3 cross(Vec3 v1, Vec3 v2){
     Vec3 newVec;
@@ -113,4 +119,4 @@ Vec3 cross(Vec3 v1, Vec3 v2){
     newVec.z = v1.x * v2.y - v1.y * v2.x;
 
     return newVec;
-}                   // Returns a Vector with its cross product
+}               // Returns a Vector with its cross product

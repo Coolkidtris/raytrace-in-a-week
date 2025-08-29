@@ -28,6 +28,6 @@ void createImage(int imageWidth, int imageHeight, char filename[]){
 }
 
 int main(){
-    createImage(256, 256, "test.ppm");
+    createImage(256, 256, "Output\\test.ppm");
     return 0;
 }

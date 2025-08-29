@@ -1,7 +1,7 @@
 #ifndef VECTOR_3
 #define VECTOR_3
-
-/*/
+#include <stdio.h>
+/*
  This defines all headers and structs related to Vectors. Vector functions
  Are contained within Vectors.C. 
 
@@ -24,12 +24,14 @@ typedef struct{
     float w;
 }Vec4;
 
+// Constructor / Destructor
+Vec3 newV3(float x, float y, float z);      // Create a Vector 
 
 // Math Functions - Scalar
-Vec3* neg(Vec3 *vectorToNegate);             // Negates all members of a vector
-Vec3* mul(Vec3 *vectorToMul, float amnt);    // Multiplies all members of a Vector by a certain number
+Vec3* neg(Vec3 *vectorToNegate);            // Negates all members of a vector
+Vec3* mul(Vec3 *vectorToMul, float amnt);   // Multiplies all members of a Vector by a certain number
 Vec3* div(Vec3 *vectorToDiv, float amnt);
-Vec3* add(Vec3 *vectorToAdd, float amnt);    // Adds a value to all members of a Vector
+Vec3* add(Vec3 *vectorToAdd, float amnt);   // Adds a value to all members of a Vector
 
 // Math Functions - Vectorised
 Vec3 vadd(Vec3 v1, Vec3 v2);                // Adds 2 vectors together
