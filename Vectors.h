@@ -24,10 +24,11 @@ typedef struct{
     float w;
 }Vec4;
 
+
 // Math Functions - Scalar
 Vec3* neg(Vec3 *vectorToNegate);             // Negates all members of a vector
 Vec3* mul(Vec3 *vectorToMul, float amnt);    // Multiplies all members of a Vector by a certain number
-Vec3 *div(Vec3 *vectorToDiv, float amnt);
+Vec3* div(Vec3 *vectorToDiv, float amnt);
 Vec3* add(Vec3 *vectorToAdd, float amnt);    // Adds a value to all members of a Vector
 
 // Math Functions - Vectorised
@@ -37,9 +38,10 @@ Vec3 vmul(Vec3 v1, Vec3 v2);                // Multiply 2 vectors together
 Vec3 vdiv(Vec3 v1, Vec3 v2);                // Divide 2 vectors by each other
 
 // Utility Functions
-void vout(Vec3 vector);                     // Prints all members of a Vector
-float vlen(Vec3 vector);                    // Returns the length of a Vector
 Vec3 *sqr(Vec3 *vectorToSqr);               // Squares all members of a vector
+Vec3 cross(Vec3 v1, Vec3 v2);               // Returns a Vector with its cross product
+void writeColour(FILE* filePtr, Vec3 pixel);
+void vout(Vec3 vector);                     // Prints all members of a Vector
 float dot(Vec3 v1, Vec3 v2);                // Returns a Vector with its dot product
-Vec3 cross(Vec3 vector);                    // Returns a Vector with its cross product
+float vlen(Vec3 vector);                    // Returns the length of a Vector
 #endif

@@ -1,1 +1,1 @@
-cl /c /I Vectors.h main.c Vectors.c
+cl /I Vectors.h  main.c Vectors.c  Colours.c

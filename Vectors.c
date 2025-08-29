@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "Vectors.h"
 
 Vec3 *neg(Vec3 *vectorToNegate){
@@ -31,6 +32,16 @@ Vec3 *add(Vec3 *vectorToAdd, float amnt){
 
     return vectorToAdd;
 }    // Adds a value to all members of a Vector
+
+/*
+Vec3 *shl(Vec3 *vectorToShift, int amnt){
+
+}   // Shift the contents of a Vector to the left
+
+Vec3 *shr(Vec3 *vectorToShift, int amnt){
+
+}   // Shift the contents of a vector to the right
+*/
 
 // Math Functions - Vectorised
 Vec3 vadd(Vec3 v1, Vec3 v2){
@@ -75,7 +86,7 @@ Vec3 vdiv(Vec3 v1, Vec3 v2){
 
 // Utility Functions
 void vout(Vec3 vector){
-    return printf("%f, %f, %f", vector.x, vector.y, vector.z);
+    printf("%f, %f, %f", vector.x, vector.y, vector.z);
 }                     // Prints all members of a Vector
 
 Vec3 *sqr(Vec3 *vectorToSqr){
@@ -86,9 +97,20 @@ Vec3 *sqr(Vec3 *vectorToSqr){
     return vectorToSqr;
 }                // Squares all members of a vector
 
-float vlen(Vec3 vector){}                    // Returns the length of a Vector
+float vlen(Vec3 vector){
+    float lengthSquared = vector.x*vector.x + vector.y*vector.y + vector.z*vector.z;
+    return sqrtf(lengthSquared);
+}                    // Returns the length of a Vector
+
 float dot(Vec3 v1, Vec3 v2){
     return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z; 
 }                     // Returns a Vector with its dot product
 
-Vec3 cross(Vec3 *vector){}                   // Returns a Vector with its cross product
+Vec3 cross(Vec3 v1, Vec3 v2){
+    Vec3 newVec;
+    newVec.x = v1.y * v2.z - v1.z * v2.y;
+    newVec.y = v1.z * v2.x - v1.x * v2.z;
+    newVec.z = v1.x * v2.y - v1.y * v2.x;
+
+    return newVec;
+}                   // Returns a Vector with its cross product
