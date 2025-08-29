@@ -24,7 +24,6 @@ typedef struct{
     float w;
 }Vec4;
 
-typedef Vec3 Colour;
 
 // Math Functions - Scalar
 Vec3* neg(Vec3 *vectorToNegate);             // Negates all members of a vector
@@ -41,7 +40,7 @@ Vec3 vdiv(Vec3 v1, Vec3 v2);                // Divide 2 vectors by each other
 // Utility Functions
 Vec3 *sqr(Vec3 *vectorToSqr);               // Squares all members of a vector
 Vec3 cross(Vec3 v1, Vec3 v2);               // Returns a Vector with its cross product
-
+void writeColour(FILE* filePtr, Vec3 pixel);
 void vout(Vec3 vector);                     // Prints all members of a Vector
 float dot(Vec3 v1, Vec3 v2);                // Returns a Vector with its dot product
 float vlen(Vec3 vector);                    // Returns the length of a Vector

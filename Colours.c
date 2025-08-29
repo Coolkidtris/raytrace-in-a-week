@@ -1,7 +1,7 @@
-#include "Vectors.h"
 #include <stdio.h>
+#include "Vectors.h"
 
-void writeColour(FILE* filePtr, Colour pixel){
+void writeColour(FILE* filePtr, Vec3 pixel){
     /*
     float floatR = pixel.x;
     float floatG = pixel.y;
